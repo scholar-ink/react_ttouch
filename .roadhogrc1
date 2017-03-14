@@ -1,0 +1,29 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "publicPath": "/",
+  "autoprefixer": {
+    "browsers": [
+      "iOS >= 8",
+      "Android >= 4"
+    ]
+  },
+  extraPostCSSPlugins: [
+    pxtorem({
+      rootValue: 100,
+      propWhiteList: [],
+    }),
+  ],
+  "extraBabelPlugins": [
+    "transform-runtime",
+
+    ["import", { "libraryName": "antd-mobile", "style": "css" }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  }
+}
