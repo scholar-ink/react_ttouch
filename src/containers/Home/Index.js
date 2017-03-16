@@ -1,33 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'dva';
 
-class Index extends Component {
-  
+class Index extends React.Component {
   constructor(props) {
     super(props);
-    
-    props.dispatch({type: 'home/getCities'});
-    
+    props.dispatch({ type: 'home/getCities' });
   }
-  
+  onClick() {
+    console.log(this);
+  }
   render() {
-    
     return (
-      
-      <div>22211222111</div>
+      <div onClick={this.onClick}>22211222111</div>
     );
   }
-  
 }
 
 Index.propTypes = {
 };
 function mapStateToProps(state) {
-  
-  const { ads,cities } = state.home;
+  const { ads, cities } = state.home;
   return {
     ads,
-    cities
+    cities,
   };
 }
 export default connect(mapStateToProps)(Index);
