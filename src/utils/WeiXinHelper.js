@@ -46,9 +46,12 @@ async function weiChatLoginByOpenId() {
     const r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
   };
+  
   const code = getQueryString('code');
+  
   if (code != null) {
     const { data } = await getOpenid({ code });
+    
     if (data.status === 1) {
       Storage.set('duanzu-openid', data.data.openid);
       push('/user/login');
