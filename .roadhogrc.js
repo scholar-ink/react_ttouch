@@ -2,7 +2,7 @@
  * Created by zhouchao on 17/2/13.
  */
 import pxtorem from 'postcss-pxtorem';
-import React from 'React';
+import React from 'react';
 
 export default {
   entry: "src/index.js",

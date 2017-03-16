@@ -46,16 +46,25 @@ const preResponse = (data) => {
  */
 export async function post(path, postData) {
   Toast.loading('加载中...', 1, () => {});
+  
   const requestUrl = API_DOMAIN + path;
+  
   const formData = new window.FormData();
+  
   postData = { ...postData, time: REQ_TIME, token: REQ_TOKEN, authToken: REQ_AUTH_TOKEN };
+  
   Object.keys(postData).forEach((key) => {
     formData.append(key, postData[key]);
   });
+  
   const response = await fetch(requestUrl, { method: 'post', body: formData });
+  
   checkStatus(response);
+  
   const data = await parseJSON(response);
+  
   preResponse(data);
+  
   return data;
 }
 /**
@@ -69,16 +78,25 @@ export async function post(path, postData) {
  */
 export async function upload(path, file, name = 'file', postData) {
   Toast.loading('上传中...', 1, () => ({}));
+  
   const requestUrl = API_DOMAIN + path;
+  
   const formData = new window.FormData();
+  
   postData = { ...postData, time: REQ_TIME, token: REQ_TOKEN, authToken: REQ_AUTH_TOKEN };
   formData.append(name, file);
+  
   Object.keys(postData).forEach((key) => {
     formData.append(key, postData[key]);
   });
+  
   const response = await fetch(requestUrl, { method: 'post', body: formData });
+  
   checkStatus(response);
+  
   const data = await parseJSON(response);
+  
   preResponse(data);
+  
   return data;
 }
