@@ -22,7 +22,6 @@ export default {
     development: {
       extraBabelPlugins: [
         "dva-hmr",
-        "lodash"
       ]
     }
   },
