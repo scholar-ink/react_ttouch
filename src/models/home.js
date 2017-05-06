@@ -1,3 +1,4 @@
+// import { routerRedux } from 'dva/router';
 import { getCities } from '../services/index';
 
 export default {
@@ -14,6 +15,7 @@ export default {
   subscriptions: {},
   effects: {
     * getCities({ payload }, { call, put }) {
+      // yield put(routerRedux.push('/user'));
       const { data } = yield call(getCities, { phone: 13585821080, password: 'zc2011', code: 111111 });
       yield put({ type: 'getCitiesSuccess', cities: data });
     },

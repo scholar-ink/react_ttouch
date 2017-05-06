@@ -1,9 +1,19 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Icon } from 'antd-mobile';
+// import { routerRedux } from 'dva/router';
+
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
+    // props.dispatch(routerRedux.push({
+    //   pathname: '/logout',
+    //   query: {
+    //     page: 2,
+    //   },
+    // }));
+  
     props.dispatch({ type: 'home/getCities' });
   }
   onClick() {
@@ -11,7 +21,11 @@ class Index extends React.Component {
   }
   render() {
     return (
-      <div onClick={this.onClick}>22211222111</div>
+      <div>
+        <Icon type="check" />
+        <div onClick={this.onClick}>22211222111</div>
+
+      </div>
     );
   }
 }

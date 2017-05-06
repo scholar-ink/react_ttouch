@@ -11,7 +11,7 @@ const app = dva({
   onAction: createLogger(),
   onError(e) {
     Toast.offline(e.message);
-    console.log(e.message);
+    console.error(e.message);
   },
 });
 
