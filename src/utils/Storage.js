@@ -3,6 +3,7 @@ export default {
     return window.localStorage.setItem(key, window.JSON.stringify(data));
   },
   get: (key) => {
+    console.log(window.localStorage.getItem(key));
     if (window.localStorage.getItem(key) === undefined) {
       return '';
     }
