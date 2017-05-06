@@ -3,8 +3,15 @@ import { connect } from 'dva';
 
 class Share extends Component {
   render() {
+    const { params } = this.props;
+    
+    console.log(params);
     return (
-      <div>User</div>
+      
+      <div>
+        <img alt="111" src={require('../../assets/yay.jpg')} />
+        <div>User</div>
+      </div>
     );
   }
 }
