@@ -1,6 +1,13 @@
+export const dayNames = ['周天', '周一', '周二', '周三', '周四', '周五', '周六'];
+
 export default {
-  format: (timestamp, format) => {
-    const date = new Date(timestamp);
+  format: (obj, format) => {
+    let date;
+    if (obj instanceof Date) {
+      date = new Date();
+    } else {
+      date = new Date(obj);
+    }
     
     const o = {
       'M+': date.getMonth() + 1, // 月份
@@ -10,6 +17,7 @@ export default {
       's+': date.getSeconds(), // 秒
       'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
       'S+': date.getMilliseconds(), // 毫秒
+      'D+': dayNames[date.getDay()], //星期
     };
     
     if (/(y+)/.test(format)) format = format.replace(RegExp.$1, (`${date.getFullYear()}`).substr(4 - RegExp.$1.length));
