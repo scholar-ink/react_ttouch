@@ -4,7 +4,7 @@ export default {
   format: (obj, format) => {
     let date;
     if (obj instanceof Date) {
-      date = new Date();
+      date = obj;
     } else {
       date = new Date(obj);
     }
