@@ -22,7 +22,7 @@ export default {
   },
   extraBabelPlugins: [
     "transform-runtime",
-    ["import", { "libraryName": "antd-mobile", "style": "css" }]
+    ["import", {"libraryName": "antd-mobile", "style": "css"}]
   ],
   svgSpriteLoaderDirs: svgSpriteDirs,
   env: {
