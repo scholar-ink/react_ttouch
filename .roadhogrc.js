@@ -38,4 +38,5 @@ export default {
       propWhiteList: [],
     }),
   ],
+  theme: "./theme.js"
 };
